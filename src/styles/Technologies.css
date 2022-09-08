@@ -1,0 +1,30 @@
+.tech_box {
+    max-width: 350px;
+    min-height: 230px;
+    padding: 20px 10px;
+    margin: 20px 20px;
+    border-radius: 10px;
+}
+
+.tech_box span {
+    margin-top: 10px;
+    color: rgb(84, 84, 84);
+}
+
+.tech_box img {
+    height: 50px;
+}
+
+@media (max-width: 426px) {
+    .tech_box span {
+        font-size: 13px;
+    }
+
+    .tech_box img {
+        height: 40px;
+    }
+
+    .tech_box {
+        margin: 10px 10px;
+    }
+}

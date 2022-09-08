@@ -1,0 +1,38 @@
+.footer_main {
+    background-color: var(--base-dark);
+    padding: 60px 10px;
+    color: white;
+}
+
+.footer_logo img {
+    height: 140px;
+    margin: 10px;
+}
+
+.footer_icons img {
+    height: 25px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.footer_text {
+    font-size: 15px;
+    width: 300px;
+}
+
+@media (max-width: 426px) {
+    .footer_logo img {
+        height: 100px;
+    }
+
+    .footer_text {
+        font-size: 13px;
+        text-align: center;
+        align-items: center !important;
+        justify-content: center;
+    }
+
+    .footer_icons img {
+        height: 25px;
+    }
+}

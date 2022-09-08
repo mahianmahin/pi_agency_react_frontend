@@ -1,0 +1,53 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(219, 219, 219);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--base-dark);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--base-light);
+}
+
+.navbar_main img {
+    height: 90px;
+}
+
+.navbar_links a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin: 0px 15px;
+    font-weight: 600;
+}
+
+.navbar_links .contact_btn {
+    background-color: var(--base-dark);
+    padding: 5px 15px;
+    color: white;
+    border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+    .navbar_links {
+        display: none;
+    }
+
+    .navbar_main {
+        justify-content: center !important;
+    }
+}

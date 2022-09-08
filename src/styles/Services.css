@@ -1,0 +1,33 @@
+.service_block {
+    margin: 30px 40px;
+    text-align: center;
+}
+
+.service_heading {
+    margin: 15px 0px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--base-light);
+}
+
+.service_desc {
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .service_block {
+        margin: 30px 20px;
+    }
+
+    .service_desc {
+        font-size: 13px;
+    }
+
+    .service_heading {
+        font-size: 18px;
+    }
+
+    .service_block img {
+        height: 70px;
+    }
+}

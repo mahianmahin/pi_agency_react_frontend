@@ -1,0 +1,29 @@
+.tool_box span {
+    font-size: 22px;
+    margin-top: 10px;
+    color: var(--base-dark);
+    font-weight: bold;
+}
+
+.tool_box {
+    height: 150px;
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px 20px;
+}
+
+@media (max-width: 426px) {
+    .tool_box {
+        width: 100px;
+        height: 100px;
+        margin: 5px 20px;
+    }
+
+    .tool_box img {
+        height: 30px;
+    }
+
+    .tool_box span {
+        font-size: 13px;
+    }
+}

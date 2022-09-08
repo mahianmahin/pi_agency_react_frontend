@@ -2,6 +2,62 @@
   text-align: center;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.section_heading {
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--base-light);
+  text-align: center;
+}
+
+.section_desc {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  color: rgb(80, 80, 80);
+}
+
+/* bootstrap effect remover */
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .section_heading {
+    font-size: 25px;
+  }
+
+  .section_desc {
+    font-size: 13px;
+  }
+}
+
+* {
+  cursor: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,6 +88,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
