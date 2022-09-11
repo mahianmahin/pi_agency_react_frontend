@@ -1,3 +1,5 @@
+import project2 from "../assets/project2.png";
+import project3 from "../assets/project3.png";
 import sample from "../assets/sample.png";
 import "../styles/Projects.css";
 
@@ -13,24 +15,24 @@ export default function Projects() {
                 <div className="d-flex flex-wrap justify-content-center align-items-center">
                     
                     <div className="project_box d-flex flex-column">
-                        <img src={sample} alt="sample" />
-                        <span className="project_heading">Name of project</span>
+                        <img src={sample} alt="thumbnail" />
+                        <span className="project_heading">Landing Page</span>
                         <span className="project_desc">This is a landing page of our own agency project built by us. This project shows the extraordinary skill of our front end developer. It’s been built using JavaScript.</span>
-                        <a href="#">Take a look</a>
+                        <a href="https://piagency.tech" target="blank">Take a look</a>
                     </div>
                     
                     <div className="project_box d-flex flex-column">
-                        <img src={sample} alt="sample" />
-                        <span className="project_heading">Name of project</span>
-                        <span className="project_desc">This is a landing page of our own agency project built by us. This project shows the extraordinary skill of our front end developer. It’s been built using JavaScript.</span>
-                        <a href="#">Take a look</a>
+                        <img src={project2} alt="sample" />
+                        <span className="project_heading">E-Commerce</span>
+                        <span className="project_desc">Foodsubway.com is an e-commerce website. It's been developed using ReactJs in the front end Django REST framework API in the backend side.</span>
+                        <a href="https://foodsubway.com" target="blank">Take a look</a>
                     </div>
                     
                     <div className="project_box d-flex flex-column">
-                        <img src={sample} alt="sample" />
-                        <span className="project_heading">Name of project</span>
-                        <span className="project_desc">This is a landing page of our own agency project built by us. This project shows the extraordinary skill of our front end developer. It’s been built using JavaScript.</span>
-                        <a href="#">Take a look</a>
+                        <img src={project3} alt="sample" />
+                        <span className="project_heading">Coffeeshop Project</span>
+                        <span className="project_desc">This is a coffee shop website. Anyone can book seats directly in the coffee shop from this website. This project has been built using python Django backend.</span>
+                        <a href="http://mariam92.pythonanywhere.com/" target="blank">Take a look</a>
                     </div>
 
                 </div>

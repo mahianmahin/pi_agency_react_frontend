@@ -7,7 +7,7 @@ import location from "../assets/location.svg";
 import phone from "../assets/phone.svg";
 import "../styles/Footer.css";
 
-export default function Footer() {
+export default function Bottom() {
     return (
         <div className="container-fluid footer_main">
             <div className="container">

@@ -2,7 +2,7 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import "../src/App.css";
 import Contact from './components/Contact';
 import Cursor from './components/Cursor';
-import Footer from './components/Footer';
+import Bottom from './components/Footer';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
@@ -26,7 +26,7 @@ function App() {
       <Team />
       <Reviews />
       <Contact />
-      <Footer />
+      <Bottom />
     </>
   );
 }

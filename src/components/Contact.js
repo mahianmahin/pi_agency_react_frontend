@@ -1,31 +1,78 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import email from "../assets/email.svg";
 import location from "../assets/location.svg";
 import phone from "../assets/phone.svg";
 import "../styles/Contact.css";
 
 export default function Contact() {
-    var childrenArray = [];
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [formEmail, setFormEmail] = useState('');
+    const [formPhone, setFormPhone] = useState('');
+    const [topic, setTopic] = useState('');
+    const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
+    // var childrenArray = [];
+    // var topicArray = [];
     
-    useEffect(() => {
-        var children = document.getElementById("selectors").children;    
-        for (var i = 0; i < children.length; i++) {
-            childrenArray.push(children[i].id);
+    // useEffect(() => {
+    //     var children = document.getElementById("selectors").children;
+    //     for (var i = 0; i < children.length; i++) {
+    //         childrenArray.push(children[i].id);
+    //     }
+    // }, [])
+
+    // const clickSelector = (event) => {
+    //     var node = document.getElementById(event.target.id);
+    //     node.style.backgroundColor = "#0D9488";
+    //     node.style.color = "white";
+
+    //     childrenArray.map(id => {
+    //         if (event.target.id !== id ) {
+    //             var childNode = document.getElementById(id);
+    //             childNode.style.background = "rgb(241, 255, 242)";
+    //             childNode.style.color = "#0D9488";
+    //         }
+    //     })
+    // }
+
+
+    const handleSubmit = (event) => {
+        setIsLoading(true);
+        event.preventDefault();
+        
+        const header = {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({
+                first_name: firstName,
+                last_name: lastName,
+                email: formEmail,
+                phone: formPhone,
+                message_topic: topic,
+                message: message
+            })
         }
-    }, [])
 
-    const clickSelector = (event) => {
-        var node = document.getElementById(event.target.id);
-        node.style.backgroundColor = "#0D9488";
-        node.style.color = "white";
+        console.log(header.body);
 
-        childrenArray.map(id => {
-            if (event.target.id !== id ) {
-                var childNode = document.getElementById(id);
-                childNode.style.background = "rgb(241, 255, 242)";
-                childNode.style.color = "#0D9488";
-            }
-        })
+        if (topic !== '') {
+            fetch("https://pieagency.pythonanywhere.com/contactus/api/v1/contactus/create/", header)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    setIsLoading(false);
+                    alert("Message sent successfully!");
+                })
+        } else {
+            alert("Please select the topic of your message");
+            setIsLoading(false);
+        }
+        
     }
 
     return (
@@ -63,29 +110,44 @@ export default function Contact() {
                     </div>
                 </div>
                 <div className="col-sm-8 d-flex flex-column justify-content-center align-items-center form">
-                    <form className="">
+                    <form onSubmit={handleSubmit}>
                         <div className="d-flex justify-content-center flex-wrap align-items-center">
-                            <input onChange={(event) => console.log(event.target.value)} type="text" className="form-control" placeholder="First Name" />
-                            <input type="text" className="form-control" placeholder="Last Name" />
+                            <input required onChange={(event) => setFirstName(event.target.value)} value={firstName} type="text" className="form-control" placeholder="First Name" />
+                            <input required onChange={(event) => setLastName(event.target.value)} value={lastName} type="text" className="form-control" placeholder="Last Name" />
                         </div>
                         
                         <div className="d-flex justify-content-center align-items-center flex-wrap">
-                            <input type="email" className="form-control" placeholder="Email address" />
-                            <input type="number" className="form-control" placeholder="Phone Number" />
+                            <input required onChange={(event) => setFormEmail(event.target.value)} value={formEmail} type="email" className="form-control" placeholder="Email address" />
+                            <input required onChange={(event) => setFormPhone(event.target.value)} value={formPhone} type="number" className="form-control" placeholder="Phone Number" />
                         </div>
 
                         <span className="mt-5">What is the topic of your message?</span>
 
                         <div className="d-flex justify-content-start align-items-center flex-wrap" id="selectors">
-                            <span onClick={(event) => clickSelector(event)} className="radio_selector" id="web">Website/Software</span>
-                            <span onClick={(event) => clickSelector(event)} className="radio_selector" id="devops">DevOps</span>
-                            <span onClick={(event) => clickSelector(event)} className="radio_selector" id="ui/ux">Ui/Ux</span>
-                            <span onClick={(event) => clickSelector(event)} className="radio_selector" id="api">API</span>
+                            <label htmlFor="Website/Software">
+                                <input type="radio" name="topic" id="Website/Software" />
+                                <span onClick={event => setTopic(event.target.innerText)}  className="radio_selector">Website/Software</span>
+                            </label>
+                            
+                            <label htmlFor="DevOps">
+                                <input type="radio" name="topic" id="DevOps" />
+                                <span onClick={event => setTopic(event.target.innerText)}  className="radio_selector">DevOps</span>
+                            </label>
+                            
+                            <label htmlFor="Ui/Ux">
+                                <input type="radio" name="topic" id="Ui/Ux" />
+                                <span  onClick={event => setTopic(event.target.innerText)} className="radio_selector">Ui/Ux</span>
+                            </label>
+                            
+                            <label htmlFor="Other">
+                                <input type="radio" name="topic" id="Other" />
+                                <span onClick={event => setTopic(event.target.innerText)} className="radio_selector">Other</span>
+                            </label>
                         </div>
 
-                        <textarea className="form-control" placeholder="Your message..."></textarea>
+                        <textarea onChange={(event) => setMessage(event.target.value)} value={message} required className="form-control" placeholder="Your message..."></textarea>
 
-                        <button>Send message</button>
+                        {!isLoading ? <button type="submit">Send message</button> : <button disabled type="submit">Sending...</button>}
                     </form>
                 </div>
             </div>

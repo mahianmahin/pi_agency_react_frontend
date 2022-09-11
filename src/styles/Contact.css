@@ -77,6 +77,15 @@
     min-height: 600px;
 }
 
+#selectors label input {
+    display: none;
+}
+
+#selectors label input:checked~span {
+    background-color: var(--base-light);
+    color: white;
+}
+
 .radio_selector {
     height: 50px;
     border: 3px solid var(--base-light);
@@ -90,10 +99,6 @@
     background-color: rgb(241, 255, 242);
     transition: .3s ease;
 }
-
-/* .radio_selector:nth-child(1) {
-    margin-left: 0;
-} */
 
 .form input[type=text],
 .form input[type=email],
@@ -133,12 +138,18 @@
     background-color: var(--base-light);
     border: 2px solid var(--base-light);
     margin-top: 5px;
-    transition: .2s ease;
+    transition: .3s ease;
 }
 
 .form button:hover {
     background-color: transparent;
     color: var(--base-light);
+}
+
+.form button:disabled {
+    background-color: var(--base-light);
+    color: white;
+    border: 2px solid var(--base-light);
 }
 
 @media (max-width: 426px) {
