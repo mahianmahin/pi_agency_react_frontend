@@ -13,31 +13,6 @@ export default function Contact() {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    // var childrenArray = [];
-    // var topicArray = [];
-    
-    // useEffect(() => {
-    //     var children = document.getElementById("selectors").children;
-    //     for (var i = 0; i < children.length; i++) {
-    //         childrenArray.push(children[i].id);
-    //     }
-    // }, [])
-
-    // const clickSelector = (event) => {
-    //     var node = document.getElementById(event.target.id);
-    //     node.style.backgroundColor = "#0D9488";
-    //     node.style.color = "white";
-
-    //     childrenArray.map(id => {
-    //         if (event.target.id !== id ) {
-    //             var childNode = document.getElementById(id);
-    //             childNode.style.background = "rgb(241, 255, 242)";
-    //             childNode.style.color = "#0D9488";
-    //         }
-    //     })
-    // }
-
-
     const handleSubmit = (event) => {
         setIsLoading(true);
         event.preventDefault();

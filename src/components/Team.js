@@ -4,6 +4,7 @@ import facebook from "../assets/facebook.svg";
 import github from "../assets/github.svg";
 import jamil from "../assets/jamil.png";
 import linkedin from "../assets/linkedin.svg";
+import sabbir from "../assets/sabbir.jpg";
 import sakib from "../assets/sakib.jpg";
 import "../styles/Team.css";
 
@@ -65,6 +66,17 @@ export default function Team() {
                         <a href="https://www.facebook.com/sovon.jami/" target="blank"><img src={facebook} alt="icon" /></a>
                         <a href="#" target="blank"><img src={linkedin} alt="icon" /></a>
                         <a href="https://github.com/safayetjamil647" target="blank"><img src={github} alt="icon" /></a>
+                    </div>
+                </div>
+                
+                <div className="team_box mt-5 shadow d-flex flex-column justify-content-center align-items-start">
+                    <img src={sabbir} alt="avatar" />
+                    <span className="team_title">Sabbir Ahmed</span>
+                    <span className="team_designation">Ui/Ux Designer</span>
+                    <span className="team_decs">Sabbir is a talented Ui/Ux designer. He has great sense of Ui designs as well as user experience. He handles any product from the ground up to the prior development phase.</span>
+
+                    <div className="d-flex icons">
+                        <a href="https://www.linkedin.com/in/sbahamed38/" target="blank"><img src={linkedin} alt="icon" /></a>
                     </div>
                 </div>
             </div>
