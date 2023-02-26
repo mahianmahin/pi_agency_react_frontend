@@ -2,7 +2,6 @@ import avatar from "../assets/avatar1.png";
 import babor from "../assets/babor.png";
 import facebook from "../assets/facebook.svg";
 import github from "../assets/github.svg";
-import jamil from "../assets/jamil.png";
 import linkedin from "../assets/linkedin.svg";
 import sabbir from "../assets/sabbir.jpg";
 import sakib from "../assets/sakib.jpg";
@@ -56,7 +55,7 @@ export default function Team() {
                     </div>
                 </div>
                 
-                <div className="team_box mt-5 shadow d-flex flex-column justify-content-center align-items-start">
+                {/* <div className="team_box mt-5 shadow d-flex flex-column justify-content-center align-items-start">
                     <img src={jamil} alt="avatar" />
                     <span className="team_title">Safayet Jamil Sovon</span>
                     <span className="team_designation">Site Reliability Engineer</span>
@@ -67,7 +66,7 @@ export default function Team() {
                         <a href="#" target="blank"><img src={linkedin} alt="icon" /></a>
                         <a href="https://github.com/safayetjamil647" target="blank"><img src={github} alt="icon" /></a>
                     </div>
-                </div>
+                </div> */}
                 
                 <div className="team_box mt-5 shadow d-flex flex-column justify-content-center align-items-start">
                     <img src={sabbir} alt="avatar" />
